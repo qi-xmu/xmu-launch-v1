@@ -1,34 +1,30 @@
 <script setup>
+import { ref } from "vue";
+import bing_logo from "../assets/search/bing.svg";
+import search_button from "../assets/search/search_button.svg";
 
-import bing_logo from "../assets/search/bing.svg"
 
-</script>
+var search_text = ref("")
 
-<script>
-export default {
-    data() {
-        return {
-            search_text: ""
-        }
-    },
-    methods: {
-        search(event) {
-            const text = "https://cn.bing.com/search?q=" + this.search_text
-            this.search_text = ""
-            console.log(text)
-            window.open(text);
-        },
-        search_selector(event) {
-            alert("目前只支持bing")
-        }
+function search(event) {
+    console.log(search_text.value)
+    if (search_text.value) {
+        const text = "https://cn.bing.com/search?q=" + search_text.value
+        search_text.value = ""
+        window.open(text);
     }
+};
+function search_selector(event) {
+    alert("目前只支持bing")
 }
 </script>
+
 
 <template>
     <div class="searchbox-container">
         <img id="icon" :src="bing_logo" @click="search_selector" />
         <input class="searchbox" v-model="search_text" placeholder="搜索" @keydown.enter="search">
+        <img id="icon" :src="search_button" @click="search" />
     </div>
 </template>
 
@@ -42,19 +38,19 @@ export default {
 }
 
 #icon:hover {
-    background-color: #000000a5;
+    background-color: #242424a5;
 }
 
 .searchbox-container {
+    appearance: none;
     flex-direction: row;
     display: flex;
     align-items: center;
-    width: 70vw;
+    width: 90vw;
     max-width: 400px;
     height: 50px;
     border-radius: 25px;
-    appearance: none;
-    background-color: #f2f2f2;
+    background-color: #141414aa;
 }
 
 .searchbox {
@@ -77,7 +73,9 @@ export default {
 
 
 @media (prefers-color-scheme: light) {
-    .searchbox {}
+    .searchbox-container {
+        background-color: #f2f2f2;
+    }
 
     #icon:hover {
         background-color: #ffffffa5;
