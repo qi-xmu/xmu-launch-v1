@@ -1,20 +1,37 @@
 <script setup>
+
+import xmu_logo from "../assets/xmu-logo.png";
 defineProps({
   msg: String
 })
 </script>
 
 <template>
-  <h3>{{ msg }} <code id="code">朴素版</code></h3>
-  <!-- <p> </p> -->
-  
+  <div class="a">
+    <img :src=xmu_logo height="40" />
+    <text> {{ msg }} </text>
+  </div>
 </template>
 
 <style scoped>
-
-h3{
-  background-color: #0d2f6e;
-  color: white;
+div {
+  margin-block: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: large;
 }
 
+.a {
+  vertical-align: center;
+  color: white;
+  background-color: #0d2f6e;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.a text {
+  padding-inline: 10px;
+  font-weight: bold;
+}
 </style>
