@@ -19,7 +19,8 @@
 			
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
-				"dbaeumer.vscode-eslint"
+				"dbaeumer.vscode-eslint",
+				"Vue.volar"
 			]
 		}
 	},
@@ -32,6 +33,10 @@
 		"3000": {
 			"label": "Hello Remote World",
 			"onAutoForward": "notify"
+		},
+		"5173": {
+			"label": "Debug",
+			"onAutoForward": "silent"
 		}
 	},
 
