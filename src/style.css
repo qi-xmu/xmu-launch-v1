@@ -8,6 +8,7 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -76,6 +77,13 @@ button:focus-visible {
   text-align: center;
 }
 
+#code{
+  color:#558eda;
+  background-color: #2d2d2d;
+  padding: 3px;
+  border-radius: 5px;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -86,5 +94,9 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+
+  #code{
+    background-color: #f2f2f2;
   }
 }
