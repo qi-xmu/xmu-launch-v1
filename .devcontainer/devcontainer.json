@@ -19,7 +19,9 @@
 			
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
-				"Vue.volar"
+				"dbaeumer.vscode-eslint",
+				"Vue.volar",
+				"mhutchie.git-graph"
 			]
 		}
 	},
