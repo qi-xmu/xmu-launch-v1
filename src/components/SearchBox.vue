@@ -1,17 +1,21 @@
 <script setup>
 import { ref } from "vue";
-import bing_logo from "../assets/search/bing.svg";
 import search_button from "../assets/search/search_button.svg";
 
+import default_data from "../utils/default";
 
-var search_text = ref("")
+const select = 0;
+const search_logo = default_data.search_engine[select].icon;
+const search_url = default_data.search_engine[select].url;
+
+var search_text = ref()
 
 function search(event) {
     console.log(search_text.value)
     if (search_text.value) {
-        const text = "https://cn.bing.com/search?q=" + search_text.value
-        search_text.value = ""
-        window.open(text);
+        const text = search_url + search_text.value;
+        // window.location.href= text;  // 直接打开网站
+        window.open(text);  // 打开新标签页
     }
 };
 function search_selector(event) {
@@ -22,7 +26,7 @@ function search_selector(event) {
 
 <template>
     <div class="searchbox-container">
-        <img id="icon" :src="bing_logo" @click="search_selector" />
+        <img id="icon" :src="search_logo" @click="search_selector" />
         <input class="searchbox" v-model="search_text" placeholder="搜索" @keydown.enter="search">
         <img id="icon" :src="search_button" @click="search" />
     </div>

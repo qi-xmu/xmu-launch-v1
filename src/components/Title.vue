@@ -1,6 +1,7 @@
 <script setup>
 
 import xmu_logo from "../assets/xmu-logo.png";
+
 defineProps({
   msg: String
 })
@@ -25,9 +26,9 @@ div {
 .a {
   vertical-align: center;
   color: white;
-  background-color: #0d2f6e;
+  background-color: #164fba;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 100px;
 }
 
 .a text {
