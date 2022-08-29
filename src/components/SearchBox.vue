@@ -34,8 +34,8 @@ function search_selector(event) {
 
 <style scoped>
 #icon {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     padding: 5px;
     margin: 5px;
     border-radius: 100%;
@@ -46,24 +46,30 @@ function search_selector(event) {
 }
 
 .searchbox-container {
-    appearance: none;
-    flex-direction: row;
     display: flex;
+    flex-direction: row;
     align-items: center;
-    width: 90vw;
-    max-width: 400px;
-    height: 50px;
-    border-radius: 25px;
+    overflow: hidden;
+    min-width: 200px;
+    width: 80vw;
+    max-width: 500px;
+    height: 40px;
+    border-radius: 20px;
     background-color: #141414aa;
+    /* 布局位置 */
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .searchbox {
     width: 100%;
-    padding-block: 10px;
     height: 30px;
+    padding-block: 5px;
     border: none;
     background: transparent;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .searchbox:hover,
